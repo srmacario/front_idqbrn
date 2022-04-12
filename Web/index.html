@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="css/stylesMapa.css">
+</head>
+
+<body>
+    <div class="menuNav">
+        <div class="titulo">
+            <img class="logo" src="img/imeLogo.png">
+        </div>
+        <div class="container">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="Buscar...">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="containerList">
+                <ul class="ks-cboxtags">
+                    <li><input type="checkbox" id="checkboxOne" value="Dengue"><label for="checkboxOne">Dengue</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxTwo" value="Febre Amarela" checked><label
+                            for="checkboxTwo">Febre Amarela</label></li>
+                    <li><input type="checkbox" id="checkboxThree" value="Esquistossomose" checked><label
+                            for="checkboxThree">Esquistossomose</label></li>
+                    <li><input type="checkbox" id="checkboxFour" value="Malária"><label
+                            for="checkboxFour">Malária</label></li>
+                    <li><input type="checkbox" id="checkboxFive" value="Tuberculose"><label
+                            for="checkboxFive">Tuberculose</label></li>
+                    <li><input type="checkbox" id="checkboxSix" value="Leishmaniose" checked><label
+                            for="checkboxSix">Leishmaniose</label></li>
+                    <li><input type="checkbox" id="checkboxSeven" value="Doença de Chagas"><label
+                            for="checkboxSeven">Doença
+                            de Chagas</label></li>
+                    <li><input type="checkbox" id="checkboxEight" value="Leptospirose"><label
+                            for="checkboxEight">Leptospirose</label></li>
+                    <li><input type="checkbox" id="checkboxNine" value="Arboviroses Urbanas"><label
+                            for="checkboxNine">Arboviroses Urbanas</label></li>
+                </ul>
+
+            </div>
+        </div>
+        <!--<div class="container">
+            <div class="center">
+                <button type="submit" class="outline">Entrar</button>
+            </div>
+        </div>-->
+    </div>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([-14.613282, -48.484189], 5);
+
+        L.tileLayer('https://api.maptiler.com/maps/voyager/{z}/{x}/{y}.png?key=jtOqBSIykHSBkZTIYEDL', {
+            tileSize: 512,
+            zoomOffset: -1,
+            minZoom: 1,
+            attribution: "\u003ca href=\"https://carto.com/\" target=\"_blank\"\u003e\u0026copy; CARTO\u003c/a\u003e \u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+            crossOrigin: true
+        }).addTo(map);
+    </script>
+</body>
+
+</html>
